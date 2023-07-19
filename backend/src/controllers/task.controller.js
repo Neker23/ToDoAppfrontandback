@@ -25,7 +25,6 @@ const update = (req, res) => {
     taskToUpdate.name = taskUpdated.name;
     taskToUpdate.description = taskUpdated.description;
     taskToUpdate.completed = taskUpdated.completed;
-
     return res.status(statusCode.Success).json();
   } else {
     return res.status(statusCode.NotFound).json();
