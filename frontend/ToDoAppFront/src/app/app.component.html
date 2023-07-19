@@ -1,0 +1,43 @@
+<ng-container *ngIf="!editMode">
+<div>Formulario principal</div>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <label >Nombre:</label>
+  <input type="text" [formControl]="formulario.get('name')" required>
+
+  <br><br>
+
+  <label >Description:</label>
+  <input type="text" formControlName="description" required>
+  <br><br>
+  <input type="submit" value="Enviar">
+</form>
+</ng-container>
+
+<ng-container *ngIf="editMode">
+  <div>Formulario para Editar</div>
+  <form [formGroup]="formularioEdit" (ngSubmit)="onSubmitEdit()">
+    <label >Nombre:</label>
+    <input type="text" [formControl]="formularioEdit.get('name')" required>
+    
+    <br><br>
+    
+    <label >Description:</label>
+    <input type="text" formControlName="description" required>
+    <br><br>
+    <input type="submit" value="Editar">
+  </form>
+</ng-container>
+  
+
+<br><br>
+<br><br>
+
+<div *ngFor="let task of tasks">
+  <div>ID: {{ task.id }}</div>
+  <div>Name: {{ task.name }}</div>
+  <div>description: {{ task.description }}</div>
+  <div>completado: {{ task.completed }}</div>
+  <button (click)="onClick(task.id)">Eliminar</button>
+  <button *ngIf="!editMode" (click)="onEdit(task)">Editar</button>
+  <button (click)="onComplet(task)">Completar</button>
+</div>
