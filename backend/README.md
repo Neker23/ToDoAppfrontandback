@@ -1,13 +1,9 @@
 # TODO APP
 
-## Get all
-GET /tasks
+## Crear la base de datos 'todo'
 
-## Create
-POST /tasks
+## Crear la tabla con el archivo SQL
 
-## Update
-PUT /tasks/{id}
+## Configurar task.repository.js con las credenciales correctas
 
-## DELETE
-DELETE /tasks/{id}
+## Instalar visual studio (Versión community)
